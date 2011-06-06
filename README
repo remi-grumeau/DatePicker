@@ -1,6 +1,6 @@
 DatePicker.js
 Lightweight javascript framework-free datepicker
-
 Based on a DtTvB work - http://javascriptkit.com/script/script2/dyndateselector.shtml
 
 This includes some bugfixes, improvements and is now fully working on IE.
+Demo link: http://remi-grumeau.com/labs/datepicker/datepicker-demo.html
