@@ -1,0 +1,61 @@
+.ds_box {
+	z-index: 			999;
+	position: 			absolute;
+	font-family:		inherit;
+	background-color: 	#FFF;
+	border: 			1px solid #bbb;
+	-webkit-box-shadow:	0px 1px 3px rgba(0,0,0,.2);
+	-moz-box-shadow:	0px 1px 3px rgba(0,0,0,.2);
+	box-shadow:			0px 1px 3px rgba(0,0,0,.2);
+}
+
+.ds_tbl {
+	background-color: #FFF;
+}
+
+.ds_head {
+	padding:		8px 0;
+	color: 			#53637d;
+	font-family: 	inherit;
+	font-size:		14px;
+	font-weight: 	bold;
+	text-align: 	center;
+	letter-spacing: 2px;
+	background-color: #fff;
+}
+.ds_headnav {
+	padding:		5px 0;
+	color: 			#000;
+	text-align: 	center;
+	background-color: #ebeef2;
+}
+
+.ds_subhead {
+	width: 				32px;
+	color: 				#000;
+	font-family: 		inherit;
+	font-size: 			11px;
+	font-weight: 		bold;
+	text-align: 		center;
+	background-color: 	#bbcee9;
+}
+
+.ds_cell {
+	padding:			5px;
+	color: 				#000;
+	font-family:		inherit;
+	font-size: 			13px;
+	text-align:			center;
+	background-color: 	#eee;
+	cursor: 			pointer;
+}
+.ds_cell_today {
+	background-color: #fff;
+}
+.ds_headnav:hover,
+.ds_cell:hover,
+.ds_cell_active {
+	background-color: #dce6f2;
+}
+
+input.hidden { opacity: 0;}
