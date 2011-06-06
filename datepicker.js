@@ -1,5 +1,3 @@
-if(!gbi) { function gbi(a) {	return document.getElementById(a); } }
-
 var ds_i_date = new Date();
 ds_c_month = ds_i_date.getMonth() + 1;
 ds_c_year = ds_i_date.getFullYear();
@@ -9,6 +7,9 @@ ds_today_d = ds_today.getDate();
 ds_today_m = ds_today.getMonth() + 1;
 ds_today_y = ds_today.getFullYear();
 ds_today = undefined;
+
+// cleaner in code
+function ds_gbi(a) { return document.getElementById(a); }
 
 // Get the left and the top of the element.
 function ds_getleft(el) {
@@ -164,7 +165,7 @@ function ds_draw_calendar(m, y) {
 // When user click on the date, it will set the data to d.
 function ds_sh(t,pos) {
 	// IE bugfix
-	t = (typeof t =='string')?gbi(t):t;
+	t = (typeof t =='string')?ds_gbi(t):t;
 
 	ds_element = t;
 	
@@ -180,8 +181,8 @@ function ds_sh(t,pos) {
 		ds_c_year = ds_sh_date.getFullYear();
 	}
 	// Draw the calendar
-	ds_oe = gbi('ds_calclass');
-	ds_ce = gbi('ds_conclass');
+	ds_oe = ds_gbi('ds_calclass');
+	ds_ce = ds_gbi('ds_conclass');
 	ds_draw_calendar(ds_c_month, ds_c_year);
 	// To change the position properly, we must show it first.
 	ds_ce.style.display = '';
@@ -194,7 +195,7 @@ function ds_sh(t,pos) {
 	}
 	else
 	{
-		pos = (typeof pos=='string')?gbi(pos):pos;
+		pos = (typeof pos=='string')?ds_gbi(pos):pos;
 		the_left = ds_getleft(pos);
 		the_top = ds_gettop(pos);
 	}
@@ -279,13 +280,13 @@ function ds_onclick(d, m, y) {
 
 function ds_update(t,d,m,y) {
 	t = (typeof t !=='string')?t.toString():t;
-	gbi(t).value = y+'-'+((m<10)?'0'+m:m)+'-'+((d<10)?'0'+d:d);
+	ds_gbi(t).value = y+'-'+((m<10)?'0'+m:m)+'-'+((d<10)?'0'+d:d);
 
-	if(gbi(t+'_day'))
-		gbi(t+'_day').value=(d<10)?'0'+d:d;
-	if(gbi(t+'_month'))
-		gbi(t+'_month').value=(m<10)?'0'+m:m;
-	if(gbi(t+'_year'))
-		gbi(t+'_year').value=y;
+	if(ds_gbi(t+'_day'))
+		ds_gbi(t+'_day').value=(d<10)?'0'+d:d;
+	if(ds_gbi(t+'_month'))
+		ds_gbi(t+'_month').value=(m<10)?'0'+m:m;
+	if(ds_gbi(t+'_year'))
+		ds_gbi(t+'_year').value=y;
 }
 // And here is the end.
