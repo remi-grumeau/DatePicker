@@ -6,7 +6,7 @@ It also includes some bugfixes, improvements and fully compatible with IE8+.
 No third-party library dependency.
 
 # How to use
-## on an input
+### on an input
 For a given id attribute of 'birthday', you should have
 - an input text with id equal to 'birthday'
 - an onclick event on it to show datepicker 
@@ -25,10 +25,15 @@ Position can also be an array with X & Y values as [10,40].
 ```
 
 
-## on multiple selects
+### on multiple selects
 For a given id attribute of 'birthday', you should have
 - 3 selects with ids 'birthday_day', 'birthday_month' & 'birthday_year'.
 - an hidden input text with id equal to 'birthday'
 
 # Known issues
 If no valid date is given, everything blows, where it should use today date.
+
+# Want to contribute
+This code works fine, but it's a total mess. It should be an object and all functions should renamed for something that actually make sense. 
+
+A lot more comments wouldn't be luxury neither, responsive CSS and multilingual support would be pretty nice too!
