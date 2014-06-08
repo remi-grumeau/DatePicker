@@ -12,7 +12,13 @@ For a given id attribute of 'birthday', you should have
 - an onclick event on it to show datepicker 
 
 ```html
-<input type="text" name="date_button" id="date_button" value="2011-06-02" onclick="ds_sh('date_button','date_button')">
+<input 
+	type="text" 
+	name="date_button" 
+	id="date_button" 
+	value="2011-06-02" 
+	onclick="ds_sh('date_button','date_button')"
+>
 ```
 
 Then, use ds_sh(id value, position) to use datepicker. 
@@ -21,7 +27,13 @@ First parameter is the ID value of the input element, second is the ID value of 
 Position can also be an array with X & Y values as [10,40].
 
 ```html
-<input type="text" name="date_button" id="date_button" value="2011-06-02" onclick="ds_sh('date_button', [10,40])">
+<input
+	type="text"
+	name="date_button"
+	id="date_button"
+	value="2011-06-02"
+	onclick="ds_sh('date_button', [10,40])"
+>
 ```
 
 
@@ -29,6 +41,46 @@ Position can also be an array with X & Y values as [10,40].
 For a given id attribute of 'birthday', you should have
 - 3 selects with ids 'birthday_day', 'birthday_month' & 'birthday_year'.
 - an hidden input text with id equal to 'birthday'
+
+```html
+<select
+	name="date_select1_day"
+	id="date_select1_day"
+	size="1"
+	onblur="ds_update('date_select1')"
+>
+	...
+</select>
+			
+<select
+	name="date_select1_month"
+	id="date_select1_month"
+	size="1"
+	onblur="ds_update('date_select1')"
+>
+	...
+</select>
+
+<select
+	name="date_select1_year"
+	id="date_select1_year"
+	size="1"
+	onblur="ds_update('date_select1')"
+>
+</select>
+
+<input
+	type="hidden"
+	name="date_select1"
+	id="date_select1"
+	value="2011-06-02"
+>
+<a
+	href="javascript:ds_sh('date_select1','date_select1_dp')"
+	id="date_select1_dp"
+><img src="datepicker_cal.gif"></a>
+```
+
 
 # Known issues
 If no valid date is given, everything blows, where it should use today date.
