@@ -83,7 +83,8 @@ For a given id attribute of 'birthday', you should have
 
 
 ## Known issues
-If no valid date is given, everything blows, where it should use today date.
+
+At some point, dates & days name is going wrong.
 
 
 ## Want to contribute
