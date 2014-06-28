@@ -1,9 +1,9 @@
 # Date Picker
-### Lightweight javascript framework-free datepicker
+### Lightweight javascript datepicker
 
-Based on [DtTvB work](http://javascriptkit.com/script/script2/dyndateselector.shtml), this is just an improved way for automatic usage.
-It also includes some bugfixes, improvements and fully compatible with IE8+. 
-No third-party library dependency.
+This script is a modern browser automatic date picker solution. 
+No third-party library dependency, IE support is IE8+.
+
 
 # How to use
 ### on an input
@@ -82,10 +82,13 @@ For a given id attribute of 'birthday', you should have
 ```
 
 
-# Known issues
+## Known issues
 If no valid date is given, everything blows, where it should use today date.
 
-# Want to contribute
-This code works fine, but it's a total mess. It should be an object and all functions should renamed for something that actually make sense. 
 
-A lot more comments wouldn't be luxury neither, responsive CSS and multilingual support would be pretty nice too!
+## Want to contribute
+Any contribution is always welcome.
+As an example, Responsive CSS and multilingual support would be pretty nice contributions :)
+
+## special thanks
+Thanks to [DtTvB's work](http://javascriptkit.com/script/script2/dyndateselector.shtml), DatePicker really start as a cleanup of it.
