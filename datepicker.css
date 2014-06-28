@@ -9,10 +9,15 @@ table.dp_calendar {
 	-webkit-box-shadow:		0px .1em .3em rgba(0,0,0,.4);
 	-moz-box-shadow:			0px .1em .3em rgba(0,0,0,.4);
 	box-shadow:						0px .1em .3em rgba(0,0,0,.4);
+	-webkit-text-size-adjust:	none;
+	-ms-text-size-adjust:			none;
 }
 /**** force cursor pointer on buttons with a onclick event ****/ 
 table.dp_calendar td[onclick] {
 	cursor:				pointer;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-ms-touch-action: 	pan-y;
+	touch-action: 	pan-y;
 }
 
 /**** add a border on cells to add a line between them - removed by default****/
