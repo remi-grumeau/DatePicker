@@ -28,51 +28,66 @@
       </header>
       <section>
         <h1>
-<a name="date-picker" class="anchor" href="#date-picker"><span class="octicon octicon-link"></span></a>Date Picker</h1>
+<a name="lightweight-javascript-datepicker" class="anchor" href="#lightweight-javascript-datepicker"><span class="octicon octicon-link"></span></a>Lightweight javascript datepicker</h1>
 
-<h3>
-<a name="lightweight-javascript-framework-free-datepicker" class="anchor" href="#lightweight-javascript-framework-free-datepicker"><span class="octicon octicon-link"></span></a>Lightweight javascript framework-free datepicker</h3>
+<p><img src="http://remi-grumeau.github.io/DatePicker/images/preview.png" alt="Lightweight javascript datepicker" title="Javascript DatePicker"></p>
 
-<p>Based on <a href="http://javascriptkit.com/script/script2/dyndateselector.shtml">DtTvB work</a>, this is just an improved way for automatic usage.
-It also includes some bugfixes, improvements and fully compatible with IE8+. 
-No third-party library dependency.</p>
+<p>This script is a modern browser automatic date picker solution. 
+No third-party library dependency, IE support is IE8+.</p>
 
 <h1>
 <a name="how-to-use" class="anchor" href="#how-to-use"><span class="octicon octicon-link"></span></a>How to use</h1>
 
 <h3>
-<a name="on-an-input" class="anchor" href="#on-an-input"><span class="octicon octicon-link"></span></a>on an input</h3>
+<a name="simple-usage" class="anchor" href="#simple-usage"><span class="octicon octicon-link"></span></a>Simple usage</h3>
 
 <p>For a given id attribute of 'birthday', you should have</p>
 
 <ul>
 <li>an input text with id equal to 'birthday'</li>
-<li>an onclick event on it to show datepicker </li>
+<li>an onclick event on it to open datepicker</li>
 </ul><div class="highlight highlight-html"><pre><span class="nt">&lt;input</span> 
     <span class="na">type=</span><span class="s">"text"</span> 
     <span class="na">name=</span><span class="s">"date_button"</span> 
     <span class="na">id=</span><span class="s">"date_button"</span> 
     <span class="na">value=</span><span class="s">"2011-06-02"</span> 
-    <span class="na">onclick=</span><span class="s">"ds_sh('date_button','date_button')"</span>
-<span class="nt">&gt;</span>
-</pre></div>
-
-<p>Then, use ds_sh(id value, position) to use datepicker. 
-First parameter is the ID value of the input element, second is the ID value of an element to use its X-Y position (could be any DOM element). </p>
-
-<p>Position can also be an array with X &amp; Y values as [10,40].</p>
-
-<div class="highlight highlight-html"><pre><span class="nt">&lt;input</span>
-    <span class="na">type=</span><span class="s">"text"</span>
-    <span class="na">name=</span><span class="s">"date_button"</span>
-    <span class="na">id=</span><span class="s">"date_button"</span>
-    <span class="na">value=</span><span class="s">"2011-06-02"</span>
-    <span class="na">onclick=</span><span class="s">"ds_sh('date_button', [10,40])"</span>
+    <span class="na">onclick=</span><span class="s">"DP.open('date_button','date_button')"</span>
 <span class="nt">&gt;</span>
 </pre></div>
 
 <h3>
-<a name="on-multiple-selects" class="anchor" href="#on-multiple-selects"><span class="octicon octicon-link"></span></a>on multiple selects</h3>
+<a name="positionning" class="anchor" href="#positionning"><span class="octicon octicon-link"></span></a>Positionning</h3>
+
+<p>You can specify a second parameter to specify the datepicker position. If empty, datepicker use the first parameter (aka element ID value) to get its position.
+It can be an element ID value, a DOM element or a X,Y array.</p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;input</span> 
+    <span class="na">type=</span><span class="s">"text"</span> 
+    <span class="na">name=</span><span class="s">"date_button"</span> 
+    <span class="na">id=</span><span class="s">"date_button"</span> 
+    <span class="na">value=</span><span class="s">"2011-06-02"</span> 
+    <span class="na">onclick=</span><span class="s">"DP.open('date_button','date_button')"</span>
+<span class="nt">&gt;</span>
+
+<span class="nt">&lt;input</span> 
+    <span class="na">type=</span><span class="s">"text"</span> 
+    <span class="na">name=</span><span class="s">"date_button"</span> 
+    <span class="na">id=</span><span class="s">"date_button"</span> 
+    <span class="na">value=</span><span class="s">"2011-06-02"</span> 
+    <span class="na">onclick=</span><span class="s">"DP.open('date_button', myDomElement)"</span>
+<span class="nt">&gt;</span>
+
+<span class="nt">&lt;input</span>
+    <span class="na">type=</span><span class="s">"text"</span>
+    <span class="na">name=</span><span class="s">"date_button"</span>
+    <span class="na">id=</span><span class="s">"date_button"</span>
+    <span class="na">value=</span><span class="s">"2011-06-02"</span>
+    <span class="na">onclick=</span><span class="s">"DP.open('date_button', [10,40])"</span>
+<span class="nt">&gt;</span>
+</pre></div>
+
+<h3>
+<a name="on-multiple-selects" class="anchor" href="#on-multiple-selects"><span class="octicon octicon-link"></span></a>On multiple selects</h3>
 
 <p>For a given id attribute of 'birthday', you should have</p>
 
@@ -83,7 +98,7 @@ First parameter is the ID value of the input element, second is the ID value of 
     <span class="na">name=</span><span class="s">"date_select1_day"</span>
     <span class="na">id=</span><span class="s">"date_select1_day"</span>
     <span class="na">size=</span><span class="s">"1"</span>
-    <span class="na">onblur=</span><span class="s">"ds_update('date_select1')"</span>
+    <span class="na">onblur=</span><span class="s">"DP.update('date_select1')"</span>
 <span class="nt">&gt;</span>
     ...
 <span class="nt">&lt;/select&gt;</span>
@@ -92,7 +107,7 @@ First parameter is the ID value of the input element, second is the ID value of 
     <span class="na">name=</span><span class="s">"date_select1_month"</span>
     <span class="na">id=</span><span class="s">"date_select1_month"</span>
     <span class="na">size=</span><span class="s">"1"</span>
-    <span class="na">onblur=</span><span class="s">"ds_update('date_select1')"</span>
+    <span class="na">onblur=</span><span class="s">"DP.update('date_select1')"</span>
 <span class="nt">&gt;</span>
     ...
 <span class="nt">&lt;/select&gt;</span>
@@ -101,7 +116,7 @@ First parameter is the ID value of the input element, second is the ID value of 
     <span class="na">name=</span><span class="s">"date_select1_year"</span>
     <span class="na">id=</span><span class="s">"date_select1_year"</span>
     <span class="na">size=</span><span class="s">"1"</span>
-    <span class="na">onblur=</span><span class="s">"ds_update('date_select1')"</span>
+    <span class="na">onblur=</span><span class="s">"DP.update('date_select1')"</span>
 <span class="nt">&gt;</span>
 <span class="nt">&lt;/select&gt;</span>
 
@@ -112,22 +127,23 @@ First parameter is the ID value of the input element, second is the ID value of 
     <span class="na">value=</span><span class="s">"2011-06-02"</span>
 <span class="nt">&gt;</span>
 <span class="nt">&lt;a</span>
-    <span class="na">href=</span><span class="s">"javascript:ds_sh('date_select1','date_select1_dp')"</span>
+    <span class="na">href=</span><span class="s">"javascript:DP.open('date_select1','date_select1_dp')"</span>
     <span class="na">id=</span><span class="s">"date_select1_dp"</span>
 <span class="nt">&gt;&lt;img</span> <span class="na">src=</span><span class="s">"datepicker_cal.gif"</span><span class="nt">&gt;&lt;/a&gt;</span>
 </pre></div>
 
-<h1>
-<a name="known-issues" class="anchor" href="#known-issues"><span class="octicon octicon-link"></span></a>Known issues</h1>
+<p>Please note that in this case, it might be a good idea to add onblur events on select to update the hidden input value when a select value changes.</p>
 
-<p>If no valid date is given, everything blows, where it should use today date.</p>
+<h2>
+<a name="want-to-contribute" class="anchor" href="#want-to-contribute"><span class="octicon octicon-link"></span></a>Want to contribute</h2>
 
-<h1>
-<a name="want-to-contribute" class="anchor" href="#want-to-contribute"><span class="octicon octicon-link"></span></a>Want to contribute</h1>
+<p>Any contribution is always welcome.
+As an example, Responsive CSS and multilingual support would be pretty nice contributions :)</p>
 
-<p>This code works fine, but it's a total mess. It should be an object and all functions should renamed for something that actually make sense. </p>
+<h2>
+<a name="special-thanks" class="anchor" href="#special-thanks"><span class="octicon octicon-link"></span></a>Special thanks</h2>
 
-<p>A lot more comments wouldn't be luxury neither, responsive CSS and multilingual support would be pretty nice too!</p>
+<p>Thanks to <a href="http://javascriptkit.com/script/script2/dyndateselector.shtml">DtTvB's work</a>, DatePicker really start as a cleanup of it.</p>
       </section>
     </div>
     <footer>
