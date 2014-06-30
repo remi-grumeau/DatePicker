@@ -4,15 +4,30 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<title>DatePicker Demo</title>
 	<style>
-	html,body {
-		font-size:		72.5%;
-		font-family: Arial, Helvetica, sans-serif;
+	html, body {
+		margin:			0;
+		font-family: 	Arial, Helvetica, sans-serif;
+	}
+	body {
+		font-size:		62.5%;	/* so 1em = 10px in 99.5% browsers */
 	}
 	body > div {
 		font-size:		1.6em;
 	}
 	div > div {
-		padding-bottom:	.7em;
+		padding:		.5em;
+	}
+	h2 {
+		margin:			0;
+		padding:		.6em .8em;
+		color:			#fff;
+		font-weight:	normal;
+		font-size:		1.8em;
+		background:		#4183c4;
+	}
+	h2 a {
+		color:			#aeceee;
+		font-size:		.5em;
 	}
 	</style>
 	<link rel='stylesheet' type='text/css' media="screen" href='datepicker.css' />
@@ -21,21 +36,26 @@
 
 <body>
 	<div>
-		<h2>DatePicker implementation examples</h2>
+		<h2>DatePicker implementation examples<br><a href="http://remi-grumeau.github.io/DatePicker/" target="_blank">http://remi-grumeau.github.io/DatePicker/</a></h2>
+		
 
 		<div>
-			<label for="doc_single">Single input:</label>
+			<label for="doc_single">Single input:</label><br>
 			<input type="text" name="doc_single" id="doc_single" value="1982-06-02">
 			<a onclick="DP.open('doc_single','doc_single_icon')" id="doc_single_icon"><img src="datepicker_cal.gif" /></a>
 		</div>
 
+	<hr>
+
 		<div>
-			<label for="date_button">Input + button:</label>
+			<label for="date_button">Input + button:</label><br>
 			<input type="text" name="date_button" id="date_button" onclick="DP.open('date_button','date_button')">
 		</div>
 
+	<hr>
+
 		<div>
-			<label for="date_select1_day">Using selects:</label>
+			<label for="date_select1_day">Using selects:</label><br>
 			<select name="date_select1_day" id="date_select1_day" size="1" class="text day" onchange="DP.update('date_select1')">
 				<option value="">--</option>
 				<option value="01">01</option>
@@ -143,12 +163,13 @@
 				<option value="1970">1970</option>
 			</select>
 			<a href="javascript:DP.open('date_select1','date_select1_icon')" id="date_select1_icon"><img src="datepicker_cal.gif" /></a>
-			<br><input type="text" name="date_select1" id="date_select1" readonly><br><i>(you can hide this field)</i>
+			<input type="text" name="date_select1" id="date_select1" readonly><i style="color:#aaa;font-size:.8em;">(you can hide this field)</i>
 		</div>
 
+	<hr>
 
 		<div>
-			<label for="date_select2_day">Using selects with position as a HTML element:</label>
+			<label for="date_select2_day">Using selects with position as a HTML element:</label><br>
 			<select name="date_select2_day" id="date_select2_day" size="1" class="text day" onblur="DP.update('date_select2')">
 				<option value="">--</option>
 				<option value="01">01</option>
@@ -259,27 +280,23 @@
 			<a href="javascript:DP.open('date_select2', document.getElementById('date_select2_day'))"><img src="datepicker_cal.gif" /></a>
 		</div>
 
+	<hr>
 
 		<div>
-			<label for="date_no_position">Single input with no given position:</label>
+			<label for="date_no_position">Single input with no given position: (use field position by default)</label><br>
 			<input type="text" name="date_no_position" id="date_no_position" onclick="DP.open('date_no_position')">
 		</div>
 
-		<div>
-			<label for="date_position">Single input at a given position:</label>
-			<input type="text" name="date_position" id="date_position" onclick="DP.open('date_position',[100,50])">
-		</div>
-
-		<table id="datepicker" class="dp_calendar" style="display:none" cellpadding="0" cellspacing="0"></table>
-
-	</div>
-
 	<hr>
 
-	<div>
-		<p>
-			 <a href="http://remi-grumeau.github.io/DatePicker/" target="_blank">http://remi-grumeau.github.io/DatePicker/</a>
-		</p>
+		<div>
+			<label for="date_position">Single input at a given position: (x: 200, y:80)</label><br>
+			<input type="text" name="date_position" id="date_position" onclick="DP.open('date_position',[200,80])">
+		</div>
+
+
+		<table id="datepicker" class="dp_calendar" style="display:none;font-size:14px;" cellpadding="0" cellspacing="0"></table>
+
 	</div>
 
 
