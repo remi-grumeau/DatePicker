@@ -115,7 +115,7 @@
 				case 2 :
 					dayLabel = '2nd';
 					break;
-				case 2 :
+				case 3 :
 					dayLabel = '3rd';
 					break;
 				default :
@@ -134,10 +134,11 @@
 			} else if (m == 4 || m == 6 || m == 9 || m == 11) {
 				days = 30;
 			} else {
-				days = (y % 4 == 0) ? 29 : 28;
+				days = !!((!(y%4)&&y%100)||!(y%400)) ? 29 : 28;
 			}
 			// Make a date object.
 			var date = new Date();
+			date.setDate(1);
 			date.setMonth(m - 1);
 			date.setFullYear(y);
 			var first_day = date.getDay();
