@@ -32,7 +32,7 @@
 
 <p><img src="http://remi-grumeau.github.io/DatePicker/images/preview.png" alt="Lightweight javascript datepicker" title="Javascript DatePicker"></p>
 
-<p>This script is a modern browser automatic date picker solution. 
+<p>This script is a modern browser automatic date picker solution.
 No third-party library dependency, IE support is IE8+.</p>
 
 <h1>
@@ -41,17 +41,27 @@ No third-party library dependency, IE support is IE8+.</p>
 <h3>
 <a name="simple-usage" class="anchor" href="#simple-usage"><span class="octicon octicon-link"></span></a>Simple usage</h3>
 
+<p>First, you need to put a table element inside your page which the library can use to generate the calendar.</p>
+
+<div class="highlight highlight-html"><pre><span class="nt">&lt;table</span>
+    <span class="na">id=</span><span class="s">"datepicker"</span>
+    <span class="na">class=</span><span class="s">"dp_calendar"</span>
+    <span class="na">cellpadding=</span><span class="s">"0"</span>
+    <span class="na">cellspacing=</span><span class="s">"0"</span>
+<span class="nt">&gt;</span>
+</pre></div>
+
 <p>For a given id attribute of 'birthday', you should have</p>
 
 <ul>
 <li>an input text with id equal to 'birthday'</li>
 <li>an onclick event on it to open datepicker</li>
-</ul><div class="highlight highlight-html"><pre><span class="nt">&lt;input</span> 
-    <span class="na">type=</span><span class="s">"text"</span> 
-    <span class="na">name=</span><span class="s">"date_button"</span> 
-    <span class="na">id=</span><span class="s">"date_button"</span> 
-    <span class="na">value=</span><span class="s">"2011-06-02"</span> 
-    <span class="na">onclick=</span><span class="s">"DP.open('date_button','date_button')"</span>
+</ul><div class="highlight highlight-html"><pre><span class="nt">&lt;input</span>
+    <span class="na">type=</span><span class="s">"text"</span>
+    <span class="na">name=</span><span class="s">"date_button"</span>
+    <span class="na">id=</span><span class="s">"date_button"</span>
+    <span class="na">value=</span><span class="s">"2011-06-02"</span>
+    <span class="na">onclick=</span><span class="s">"DP.open('date_button')"</span>
 <span class="nt">&gt;</span>
 </pre></div>
 
@@ -61,19 +71,19 @@ No third-party library dependency, IE support is IE8+.</p>
 <p>You can specify a second parameter to specify the datepicker position. If empty, datepicker use the first parameter (aka element ID value) to get its position.
 It can be an element ID value, a DOM element or a X,Y array.</p>
 
-<div class="highlight highlight-html"><pre><span class="nt">&lt;input</span> 
-    <span class="na">type=</span><span class="s">"text"</span> 
-    <span class="na">name=</span><span class="s">"date_button"</span> 
-    <span class="na">id=</span><span class="s">"date_button"</span> 
-    <span class="na">value=</span><span class="s">"2011-06-02"</span> 
+<div class="highlight highlight-html"><pre><span class="nt">&lt;input</span>
+    <span class="na">type=</span><span class="s">"text"</span>
+    <span class="na">name=</span><span class="s">"date_button"</span>
+    <span class="na">id=</span><span class="s">"date_button"</span>
+    <span class="na">value=</span><span class="s">"2011-06-02"</span>
     <span class="na">onclick=</span><span class="s">"DP.open('date_button','date_button')"</span>
 <span class="nt">&gt;</span>
 
-<span class="nt">&lt;input</span> 
-    <span class="na">type=</span><span class="s">"text"</span> 
-    <span class="na">name=</span><span class="s">"date_button"</span> 
-    <span class="na">id=</span><span class="s">"date_button"</span> 
-    <span class="na">value=</span><span class="s">"2011-06-02"</span> 
+<span class="nt">&lt;input</span>
+    <span class="na">type=</span><span class="s">"text"</span>
+    <span class="na">name=</span><span class="s">"date_button"</span>
+    <span class="na">id=</span><span class="s">"date_button"</span>
+    <span class="na">value=</span><span class="s">"2011-06-02"</span>
     <span class="na">onclick=</span><span class="s">"DP.open('date_button', myDomElement)"</span>
 <span class="nt">&gt;</span>
 
@@ -151,6 +161,6 @@ As an example, Responsive CSS and multilingual support would be pretty nice cont
       <p>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></p>
     </footer>
     <!--[if !IE]><script>fixScale(document);</script><![endif]-->
-    
+
   </body>
 </html>
