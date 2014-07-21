@@ -8,6 +8,18 @@ No third-party library dependency, IE support is IE8+.
 
 # How to use
 ### Simple usage
+
+First, you need to put a table element inside your page which the library can use to generate the calendar.
+
+```html
+<table 
+	id="datepicker" 
+	class="dp_calendar" 
+	cellpadding="0" 
+	cellspacing="0">
+></table>
+```
+
 For a given id attribute of 'birthday', you should have
 - an input text with id equal to 'birthday'
 - an onclick event on it to open datepicker
@@ -18,7 +30,7 @@ For a given id attribute of 'birthday', you should have
 	name="date_button" 
 	id="date_button" 
 	value="2011-06-02" 
-	onclick="DP.open('date_button','date_button')"
+	onclick="DP.open('date_button')"
 >
 ```
 
