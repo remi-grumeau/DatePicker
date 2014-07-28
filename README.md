@@ -151,6 +151,24 @@ function myFunction(val, tid) {
 </script>
 ```
 
+## API
+####DP._locale
+An object contains a "months" array, and a "days" array.
+```months[]``` goes from 0 to 11 as 'January' to 'December', and ```days[]``` goes from 0 to 6 as 'Sun' to 'Sat'.
+
+####DP.gbi(eid)
+Just a shortcut to ```document.getElementById```.
+
+####DP.formatDate(d,m,y)
+A function to return a well formated ```yyyy-mm-dd``` string from strings or integers.
+```ex: DP.formatDate(2,6,1982) ---> "1982-06-02"```
+
+####DP.toString(d)
+Returns a human friendly date from a well formated ```yyyy-mm-dd``` string.
+```ex: DP.toString('1982-06-02') ---> "June 2th, 1982"```
+
+
+## Want to contribute?
 Any contribution is always welcome.
 As an example, Responsive CSS and multilingual support would be pretty nice contributions :)
 
