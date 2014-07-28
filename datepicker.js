@@ -310,6 +310,21 @@
 				if(DP.gbi(t+'_year'))
 					DP.gbi(t+'_year').value=y;
 			}
+		},
+		
+		toString : function(d) {
+			var dayNum = parseInt(d.substr(8,2)),day,month,year,fulltext;
+			if(dayNum==1)
+				day = '1st';
+			else if(dayNum==2)
+				day = '2nd';
+			else if(dayNum==3)
+				day = '3rd';
+			else
+				day = dayNum+'th';
+			month = DP._locale.months[parseInt(d.substr(5,2))-1];
+			year = d.substr(0,4);
+			return month+' '+day+', '+year;
 		}
 	};
 	DP.init();
