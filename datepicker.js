@@ -89,14 +89,6 @@
 				else if(DP._inputDate.day == d && DP._inputDate.month == m && DP._inputDate.year == y)
 					c += ' dp_cell_active';
 				return '<td class="'+c+'" onclick="DP.chooseDate(' + d + ',' + m + ',' + y + ')">' + d + '</td>';
-				/*
-				if(DP._today.day == d && DP._today.month == m && DP._today.year == y)
-					return '<td class="dp_cell dp_cell_today" onclick="DP.chooseDate(' + d + ',' + m + ',' + y + ')">' + d + '</td>';
-				else if(DP._inputDate.day == d && DP._inputDate.month == m && DP._inputDate.year == y)
-					return '<td class="dp_cell dp_cell_active" onclick="DP.chooseDate(' + d + ',' + m + ',' + y + ')">' + d + '</td>';
-				else
-					return '<td class="dp_cell" onclick="DP.chooseDate(' + d + ',' + m + ',' + y + ')">' + d + '</td>';
-				*/
 			}
 		},
 
