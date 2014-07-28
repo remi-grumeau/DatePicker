@@ -111,8 +111,46 @@ For a given id attribute of 'birthday', you should have
 
 Please note that in this case, it might be a good idea to add onblur events on select to update the hidden input value when a select value changes.
 
+### Onchange event callback
 
-## Want to contribute
+DatePicker can also trigger a function on
+
+```html
+<input
+	readonly
+	type="hidden"
+	name="date_callback"
+	id="date_callback"
+	value="2011-06-02"
+	onchange="myFunction(this.value,'date_callback_text')"
+>
+<input
+	readonly
+	type="text"
+	id="date_callback_text"
+	value="June 2th, 2011"
+	onclick="DP.open('date_callback','date_callback_text')"
+>
+
+<script>
+function myFunction(val, tid) {
+	var dayNum = parseInt(val.substr(8,2)),day,month,year;
+	if(dayNum==1)
+		day = '1st';
+	else if(dayNum==2)
+		day = '2nd';
+	else if(dayNum==3)
+		day = '3rd';
+	else
+		day = dayNum+'th';
+	month = DP._locale.months[parseInt(val.substr(5,2))-1];
+	year = val.substr(0,4);
+
+	DP.gbi(tid).value = month+' '+day+', '+year;
+}
+</script>
+```
+
 Any contribution is always welcome.
 As an example, Responsive CSS and multilingual support would be pretty nice contributions :)
 
