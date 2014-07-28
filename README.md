@@ -16,7 +16,7 @@ First, you need to put a table element inside your page which the library can us
 	id="datepicker" 
 	class="dp_calendar" 
 	cellpadding="0" 
-	cellspacing="0">
+	cellspacing="0"
 ></table>
 ```
 
