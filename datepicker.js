@@ -89,14 +89,6 @@
 				else if(DP._inputDate.day == d && DP._inputDate.month == m && DP._inputDate.year == y)
 					c += ' dp_cell_active';
 				return '<td class="'+c+'" onclick="DP.chooseDate(' + d + ',' + m + ',' + y + ')">' + d + '</td>';
-				/*
-				if(DP._today.day == d && DP._today.month == m && DP._today.year == y)
-					return '<td class="dp_cell dp_cell_today" onclick="DP.chooseDate(' + d + ',' + m + ',' + y + ')">' + d + '</td>';
-				else if(DP._inputDate.day == d && DP._inputDate.month == m && DP._inputDate.year == y)
-					return '<td class="dp_cell dp_cell_active" onclick="DP.chooseDate(' + d + ',' + m + ',' + y + ')">' + d + '</td>';
-				else
-					return '<td class="dp_cell" onclick="DP.chooseDate(' + d + ',' + m + ',' + y + ')">' + d + '</td>';
-				*/
 			}
 		},
 
@@ -296,8 +288,11 @@
 			if(d && m && y)
 			{
 				// set value if an element exists with this id
-				if(DP.gbi(t))
+				if(DP.gbi(t)) {
 					DP.gbi(t).value = y+'-'+((m<10)?'0'+m:m)+'-'+((d<10)?'0'+d:d);
+					if(DP.gbi(t).getAttribute('onchange'))
+						DP.gbi(t).onchange();
+				}
 
 				// set value on each select elements if they exists
 				if(DP.gbi(t+'_day'))
@@ -307,6 +302,21 @@
 				if(DP.gbi(t+'_year'))
 					DP.gbi(t+'_year').value=y;
 			}
+		},
+		
+		toString : function(d) {
+			var dayNum = parseInt(d.substr(8,2)),day,month,year,fulltext;
+			if(dayNum==1)
+				day = '1st';
+			else if(dayNum==2)
+				day = '2nd';
+			else if(dayNum==3)
+				day = '3rd';
+			else
+				day = dayNum+'th';
+			month = DP._locale.months[parseInt(d.substr(5,2))-1];
+			year = d.substr(0,4);
+			return month+' '+day+', '+year;
 		}
 	};
 	DP.init();

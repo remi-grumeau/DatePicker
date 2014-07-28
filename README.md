@@ -8,6 +8,18 @@ No third-party library dependency, IE support is IE8+.
 
 # How to use
 ### Simple usage
+
+First, you need to put a table element inside your page which the library can use to generate the calendar.
+
+```html
+<table 
+	id="datepicker" 
+	class="dp_calendar" 
+	cellpadding="0" 
+	cellspacing="0"
+></table>
+```
+
 For a given id attribute of 'birthday', you should have
 - an input text with id equal to 'birthday'
 - an onclick event on it to open datepicker
@@ -18,7 +30,7 @@ For a given id attribute of 'birthday', you should have
 	name="date_button" 
 	id="date_button" 
 	value="2011-06-02" 
-	onclick="DP.open('date_button','date_button')"
+	onclick="DP.open('date_button')"
 >
 ```
 
@@ -99,8 +111,64 @@ For a given id attribute of 'birthday', you should have
 
 Please note that in this case, it might be a good idea to add onblur events on select to update the hidden input value when a select value changes.
 
+### Onchange event callback
 
-## Want to contribute
+DatePicker can also trigger a function on
+
+```html
+<input
+	readonly
+	type="hidden"
+	name="date_callback"
+	id="date_callback"
+	value="2011-06-02"
+	onchange="myFunction(this.value,'date_callback_text')"
+>
+<input
+	readonly
+	type="text"
+	id="date_callback_text"
+	value="June 2th, 2011"
+	onclick="DP.open('date_callback','date_callback_text')"
+>
+
+<script>
+function myFunction(val, tid) {
+	var dayNum = parseInt(val.substr(8,2)),day,month,year;
+	if(dayNum==1)
+		day = '1st';
+	else if(dayNum==2)
+		day = '2nd';
+	else if(dayNum==3)
+		day = '3rd';
+	else
+		day = dayNum+'th';
+	month = DP._locale.months[parseInt(val.substr(5,2))-1];
+	year = val.substr(0,4);
+
+	DP.gbi(tid).value = month+' '+day+', '+year;
+}
+</script>
+```
+
+## API
+####DP._locale
+An object contains a "months" array, and a "days" array.
+```months[]``` goes from 0 to 11 as 'January' to 'December', and ```days[]``` goes from 0 to 6 as 'Sun' to 'Sat'.
+
+####DP.gbi(eid)
+Just a shortcut to ```document.getElementById```.
+
+####DP.formatDate(d,m,y)
+A function to return a well formated ```yyyy-mm-dd``` string from strings or integers.
+```ex: DP.formatDate(2,6,1982) ---> "1982-06-02"```
+
+####DP.toString(d)
+Returns a human friendly date from a well formated ```yyyy-mm-dd``` string.
+```ex: DP.toString('1982-06-02') ---> "June 2th, 1982"```
+
+
+## Want to contribute?
 Any contribution is always welcome.
 As an example, Responsive CSS and multilingual support would be pretty nice contributions :)
 
