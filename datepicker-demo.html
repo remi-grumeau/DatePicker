@@ -163,7 +163,7 @@
 				<option value="1970">1970</option>
 			</select>
 			<a href="javascript:DP.open('date_select1','date_select1_icon')" id="date_select1_icon"><img src="datepicker_cal.gif" /></a>
-			<input type="text" name="date_select1" id="date_select1" readonly><i style="color:#aaa;font-size:.8em;">(you can hide this field)</i>
+			<input type="text" name="date_select1" id="date_select1" readonly style="opacity:.4"><i style="color:#aaa;font-size:.8em;">(you can hide this field)</i>
 		</div>
 
 	<hr>
@@ -294,6 +294,19 @@
 			<input type="text" name="date_position" id="date_position" onclick="DP.open('date_position',[200,80])">
 		</div>
 
+	<hr>
+
+		<div>
+			<label for="date_callback_text">onchange attribute value as a callback function</label><br>
+			<input type="text" readonly id="date_callback_text" value="June 2th, 2011" onclick="DP.open('date_callback','date_callback_text')">
+			<input type="text" readonly name="date_callback" id="date_callback" value="2011-06-02" onchange="myFunction(this.value,'date_callback_text')"  style="opacity:.4">
+
+			<script>
+			function myFunction(val, tid) {
+				DP.gbi(tid).value = DP.toString(val);
+			}
+			</script>
+		</div>
 
 		<table id="datepicker" class="dp_calendar" style="display:none;font-size:14px;" cellpadding="0" cellspacing="0"></table>
 
@@ -305,9 +318,11 @@
 	(function() {
 	var d = new Date();
 	var date_button_val = d.getFullYear()+'-'+(((d.getMonth()+1)<10)?'0'+(d.getMonth()+1):d.getMonth())+'-'+d.getDate();
-	document.getElementById('date_button').value = date_button_val;
-	document.getElementById('date_position').value = date_button_val;
-	document.getElementById('date_no_position').value = date_button_val;
+	DP.gbi('date_button').value = date_button_val;
+	DP.gbi('date_position').value = date_button_val;
+	DP.gbi('date_no_position').value = date_button_val;
+	DP.gbi('date_callback').value = date_button_val;
+	myFunction(date_button_val,'date_callback_text');
 	})();
 	</script>
 
