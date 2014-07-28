@@ -296,8 +296,11 @@
 			if(d && m && y)
 			{
 				// set value if an element exists with this id
-				if(DP.gbi(t))
+				if(DP.gbi(t)) {
 					DP.gbi(t).value = y+'-'+((m<10)?'0'+m:m)+'-'+((d<10)?'0'+d:d);
+					if(DP.gbi(t).getAttribute('onchange'))
+						DP.gbi(t).onchange();
+				}
 
 				// set value on each select elements if they exists
 				if(DP.gbi(t+'_day'))
