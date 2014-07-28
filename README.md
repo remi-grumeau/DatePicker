@@ -134,19 +134,7 @@ DatePicker can also trigger a function on
 
 <script>
 function myFunction(val, tid) {
-	var dayNum = parseInt(val.substr(8,2)),day,month,year;
-	if(dayNum==1)
-		day = '1st';
-	else if(dayNum==2)
-		day = '2nd';
-	else if(dayNum==3)
-		day = '3rd';
-	else
-		day = dayNum+'th';
-	month = DP._locale.months[parseInt(val.substr(5,2))-1];
-	year = val.substr(0,4);
-
-	DP.gbi(tid).value = month+' '+day+', '+year;
+	DP.gbi(tid).value = DP.toString(val);
 }
 </script>
 ```
