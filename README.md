@@ -5,6 +5,8 @@
 This script is a modern browser automatic date picker solution. 
 No third-party library dependency, IE support is IE8+.
 
+See [live demo](http://remi-grumeau.github.io/DatePicker/demo/datepicker-demo.html).
+
 
 # How to use
 ### Simple usage
