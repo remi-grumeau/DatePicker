@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>DatePicker Demo</title>
+	<style>
+	html, body {
+		margin:			0;
+		font-family: 	Arial, Helvetica, sans-serif;
+	}
+	body {
+		font-size:		62.5%;	/* so 1em = 10px in 99.5% browsers */
+	}
+	body > div {
+		font-size:		1.6em;
+	}
+	div > div {
+		padding:		.5em;
+	}
+	h2 {
+		margin:			0;
+		padding:		.6em .8em;
+		color:			#fff;
+		font-weight:	normal;
+		font-size:		1.8em;
+		background:		#4183c4;
+	}
+	h2 a {
+		color:			#aeceee;
+		font-size:		.5em;
+	}
+	</style>
+	<link rel='stylesheet' type='text/css' media="screen" href='datepicker.css' />
+	<script type="text/javascript" src="datepicker.js"></script>
+</head>
+
+<body>
+	<div>
+		<h2>DatePicker implementation examples<br><a href="http://remi-grumeau.github.io/DatePicker/" target="_blank">http://remi-grumeau.github.io/DatePicker/</a></h2>
+		
+
+		<div>
+			<label for="doc_single">Single input:</label><br>
+			<input type="text" name="doc_single" id="doc_single" value="1982-06-02">
+			<a onclick="DP.open('doc_single','doc_single_icon')" id="doc_single_icon"><img src="datepicker_cal.gif" /></a>
+		</div>
+
+	<hr>
+
+		<div>
+			<label for="date_button">Input + button:</label><br>
+			<input type="text" name="date_button" id="date_button" onclick="DP.open('date_button','date_button')">
+		</div>
+
+	<hr>
+
+		<div>
+			<label for="date_select1_day">Using selects:</label><br>
+			<select name="date_select1_day" id="date_select1_day" size="1" class="text day" onchange="DP.update('date_select1')">
+				<option value="">--</option>
+				<option value="01">01</option>
+				<option value="02">02</option>
+				<option value="03">03</option>
+				<option value="04">04</option>
+				<option value="05">05</option>
+				<option value="06">06</option>
+				<option value="07">07</option>
+				<option value="08">08</option>
+				<option value="09">09</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+				<option value="13">13</option>
+				<option value="14">14</option>
+				<option value="15">15</option>
+				<option value="16">16</option>
+				<option value="17">17</option>
+				<option value="18">18</option>
+				<option value="19">19</option>
+				<option value="20">20</option>
+				<option value="21">21</option>
+				<option value="22">22</option>
+				<option value="23">23</option>
+				<option value="24">24</option>
+				<option value="25">25</option>
+				<option value="26">26</option>
+				<option value="27">27</option>
+				<option value="28">28</option>
+				<option value="29">29</option>
+				<option value="30">30</option>
+				<option value="31">31</option>
+			</select>
+
+			<select name="date_select1_month" id="date_select1_month" size="1" class="text month" onchange="DP.update('date_select1')">
+				<option value="">--</option>
+				<option value="01">01 - january</option>
+				<option value="02">02 - february</option>
+				<option value="03">03 - march</option>
+				<option value="04">04 - april</option>
+				<option value="05">05 - may</option>
+				<option value="06">06 - june</option>
+				<option value="07">07 - july</option>
+				<option value="08">08 - august</option>
+				<option value="09">09 - september</option>
+				<option value="10">10 - october</option>
+				<option value="11">11 - november</option>
+				<option value="12">12 - december</option>
+			</select>
+
+			<select name="date_select1_year" id="date_select1_year" size="1" class="text year" onchange="DP.update('date_select1')">
+				<option value="">--</option>
+				<option value="2021">2021</option>
+				<option value="2020">2020</option>
+				<option value="2019">2019</option>
+				<option value="2018">2018</option>
+				<option value="2017">2017</option>
+				<option value="2016">2016</option>
+				<option value="2015">2015</option>
+				<option value="2014">2014</option>
+				<option value="2013">2013</option>
+				<option value="2012">2012</option>
+				<option value="2011">2011</option>
+				<option value="2010">2010</option>
+				<option value="2009">2009</option>
+				<option value="2008">2008</option>
+				<option value="2007">2007</option>
+				<option value="2006">2006</option>
+				<option value="2005">2005</option>
+				<option value="2004">2004</option>
+				<option value="2003">2003</option>
+				<option value="2002">2002</option>
+				<option value="2001">2001</option>
+				<option value="2000">2000</option>
+				<option value="1999">1999</option>
+				<option value="1998">1998</option>
+				<option value="1997">1997</option>
+				<option value="1996">1996</option>
+				<option value="1995">1995</option>
+				<option value="1994">1994</option>
+				<option value="1993">1993</option>
+				<option value="1992">1992</option>
+				<option value="1991">1991</option>
+				<option value="1990">1990</option>
+				<option value="1989">1989</option>
+				<option value="1988">1988</option>
+				<option value="1987">1987</option>
+				<option value="1986">1986</option>
+				<option value="1985">1985</option>
+				<option value="1984">1984</option>
+				<option value="1983">1983</option>
+				<option value="1982">1982</option>
+				<option value="1981">1981</option>
+				<option value="1980">1980</option>
+				<option value="1979">1979</option>
+				<option value="1978">1978</option>
+				<option value="1977">1977</option>
+				<option value="1976">1976</option>
+				<option value="1975">1975</option>
+				<option value="1974">1974</option>
+				<option value="1973">1973</option>
+				<option value="1972">1972</option>
+				<option value="1971">1971</option>
+				<option value="1970">1970</option>
+			</select>
+			<a href="javascript:DP.open('date_select1','date_select1_icon')" id="date_select1_icon"><img src="datepicker_cal.gif" /></a>
+			<input type="text" name="date_select1" id="date_select1" readonly style="opacity:.4"><i style="color:#aaa;font-size:.8em;">(you can hide this field)</i>
+		</div>
+
+	<hr>
+
+		<div>
+			<label for="date_select2_day">Using selects with position as a HTML element:</label><br>
+			<select name="date_select2_day" id="date_select2_day" size="1" class="text day" onblur="DP.update('date_select2')">
+				<option value="">--</option>
+				<option value="01">01</option>
+				<option value="02" selected="selected">02</option>
+				<option value="03">03</option>
+				<option value="04">04</option>
+				<option value="05">05</option>
+				<option value="06">06</option>
+				<option value="07">07</option>
+				<option value="08">08</option>
+				<option value="09">09</option>
+				<option value="10">10</option>
+				<option value="11">11</option>
+				<option value="12">12</option>
+				<option value="13">13</option>
+				<option value="14">14</option>
+				<option value="15">15</option>
+				<option value="16">16</option>
+				<option value="17">17</option>
+				<option value="18">18</option>
+				<option value="19">19</option>
+				<option value="20">20</option>
+				<option value="21">21</option>
+				<option value="22">22</option>
+				<option value="23">23</option>
+				<option value="24">24</option>
+				<option value="25">25</option>
+				<option value="26">26</option>
+				<option value="27">27</option>
+				<option value="28">28</option>
+				<option value="29">29</option>
+				<option value="30">30</option>
+				<option value="31">31</option>
+			</select>
+
+			<select name="date_select2_month" id="date_select2_month" size="1" class="text month" onblur="DP.update('date_select2')">
+				<option value="">--</option>
+				<option value="01">01 - january</option>
+				<option value="02">02 - february</option>
+				<option value="03">03 - march</option>
+				<option value="04">04 - april</option>
+				<option value="05">05 - may</option>
+				<option value="06" selected="selected">06 - june</option>
+				<option value="07">07 - july</option>
+				<option value="08">08 - august</option>
+				<option value="09">09 - september</option>
+				<option value="10">10 - october</option>
+				<option value="11">11 - november</option>
+				<option value="12">12 - december</option>
+			</select>
+
+			<select name="date_select2_year" id="date_select2_year" size="1" class="text year" onblur="DP.update('date_select2')">
+				<option value="">--</option>
+				<option value="2021">2021</option>
+				<option value="2020">2020</option>
+				<option value="2019">2019</option>
+				<option value="2018">2018</option>
+				<option value="2017">2017</option>
+				<option value="2016">2016</option>
+				<option value="2015">2015</option>
+				<option value="2014">2014</option>
+				<option value="2013">2013</option>
+				<option value="2012">2012</option>
+				<option value="2011">2011</option>
+				<option value="2010">2010</option>
+				<option value="2009">2009</option>
+				<option value="2008">2008</option>
+				<option value="2007">2007</option>
+				<option value="2006">2006</option>
+				<option value="2005">2005</option>
+				<option value="2004">2004</option>
+				<option value="2003">2003</option>
+				<option value="2002">2002</option>
+				<option value="2001">2001</option>
+				<option value="2000">2000</option>
+				<option value="1999">1999</option>
+				<option value="1998">1998</option>
+				<option value="1997">1997</option>
+				<option value="1996">1996</option>
+				<option value="1995">1995</option>
+				<option value="1994">1994</option>
+				<option value="1993">1993</option>
+				<option value="1992">1992</option>
+				<option value="1991">1991</option>
+				<option value="1990">1990</option>
+				<option value="1989">1989</option>
+				<option value="1988">1988</option>
+				<option value="1987">1987</option>
+				<option value="1986">1986</option>
+				<option value="1985">1985</option>
+				<option value="1984">1984</option>
+				<option value="1983">1983</option>
+				<option value="1982" selected="true">1982</option>
+				<option value="1981">1981</option>
+				<option value="1980">1980</option>
+				<option value="1979">1979</option>
+				<option value="1978">1978</option>
+				<option value="1977">1977</option>
+				<option value="1976">1976</option>
+				<option value="1975">1975</option>
+				<option value="1974">1974</option>
+				<option value="1973">1973</option>
+				<option value="1972">1972</option>
+				<option value="1971">1971</option>
+				<option value="1970">1970</option>
+			</select>
+			<input type="hidden" class="hidden" name="date_select2" id="date_select2" value="2011-06-02">
+			<a href="javascript:DP.open('date_select2', document.getElementById('date_select2_day'))"><img src="datepicker_cal.gif" /></a>
+		</div>
+
+	<hr>
+
+		<div>
+			<label for="date_no_position">Single input with no given position: (use field position by default)</label><br>
+			<input type="text" name="date_no_position" id="date_no_position" onclick="DP.open('date_no_position')">
+		</div>
+
+	<hr>
+
+		<div>
+			<label for="date_position">Single input at a given position: (x: 200, y:80)</label><br>
+			<input type="text" name="date_position" id="date_position" onclick="DP.open('date_position',[200,80])">
+		</div>
+
+	<hr>
+
+		<div>
+			<label for="date_callback_text">onchange attribute value as a callback function</label><br>
+			<input type="text" readonly id="date_callback_text" value="June 2th, 2011" onclick="DP.open('date_callback','date_callback_text')">
+			<input type="text" readonly name="date_callback" id="date_callback" value="2011-06-02" onchange="myFunction(this.value,'date_callback_text')"  style="opacity:.4">
+
+			<script>
+			function myFunction(val, tid) {
+				DP.gbi(tid).value = DP.toString(val);
+			}
+			</script>
+		</div>
+
+		<table id="datepicker" class="dp_calendar" style="display:none;font-size:14px;" cellpadding="0" cellspacing="0"></table>
+
+	</div>
+
+
+	<script>
+	// SET ALL INPUTS VALUE TO TODAY
+	(function() {
+	var d = new Date();
+	var date_button_val = d.getFullYear()+'-'+(((d.getMonth()+1)<10)?'0'+(d.getMonth()+1):d.getMonth())+'-'+d.getDate();
+	DP.gbi('date_button').value = date_button_val;
+	DP.gbi('date_position').value = date_button_val;
+	DP.gbi('date_no_position').value = date_button_val;
+	DP.gbi('date_callback').value = date_button_val;
+	myFunction(date_button_val,'date_callback_text');
+	})();
+	</script>
+
+</form>
+</body>
+</html>

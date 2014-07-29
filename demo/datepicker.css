@@ -1,0 +1,84 @@
+/* calendar element */
+table.dp_calendar {
+	z-index: 					999;
+	position: 					absolute;
+	font-family:			inherit;
+	border: 								1px solid #bbb;
+	border-collapse:				collapse;
+	background-color: 			#fff;
+	-webkit-box-shadow:		0px .1em .3em rgba(0,0,0,.4);
+	-moz-box-shadow:			0px .1em .3em rgba(0,0,0,.4);
+	box-shadow:						0px .1em .3em rgba(0,0,0,.4);
+	-webkit-text-size-adjust:	none;
+	-ms-text-size-adjust:			none;
+}
+/**** force cursor pointer on buttons with a onclick event ****/ 
+table.dp_calendar td[onclick] {
+	cursor:				pointer;
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+	-ms-touch-action: 	pan-y;
+	touch-action: 	pan-y;
+}
+
+/**** add a border on cells to add a line between them - removed by default****/
+/*
+table.dp_calendar td {
+	border:				1px solid #fff;
+}
+*/
+
+/**** top buttons - | << | < | close | > | >> | *****/
+table.dp_calendar .dp_nav {
+	padding:			.5em 0;
+	color: 				#fff;
+	font-weight: 	bold;
+	text-align: 		center;
+	border-color:	#4183c4;
+	background: 	#4183c4;
+}
+
+/**** selected day text cell - April 1st ... *****/
+table.dp_calendar .dp_header {
+	padding:			8px 0;
+	color: 				#53637d;
+	font-family: 	inherit;
+	font-size:			14px;
+	font-weight: 	bold;
+	text-align: 		center;
+	letter-spacing: 2px;
+	background-color: #fff;
+}
+
+/**** days label cells - Sun, Mon, ... *****/
+table.dp_calendar .dp_subheader {
+	padding:				.4em 0;
+	width: 					3em;
+	color: 					#fff;
+	font-family: 		inherit;
+	font-size: 			1em;
+	text-align: 			center;
+	background:		#3e9af5;
+}
+
+/**** days cell - 1 | 2 | 3 | 4 | 5 *****/
+table.dp_calendar .dp_cell {
+	padding:				.4em;
+	color: 					#000;
+	font-family:		inherit;
+	font-size: 			13px;
+	text-align:			center;
+	background-color: 	#eee;
+	cursor: 			pointer;
+}
+/**** days cell id day is today *****/
+table.dp_calendar .dp_cell_today {
+	background-color: #cecece;
+}
+
+/**** rollover of top buttons & days cells *****/
+table.dp_calendar .dp_nav:hover,
+table.dp_calendar .dp_cell:hover,
+table.dp_calendar .dp_cell_active {
+	color:			#fff;
+	background-color: #3e9af5;
+}
