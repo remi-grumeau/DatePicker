@@ -39,13 +39,13 @@ table.dp_calendar .dp_nav {
 
 /**** selected day text cell - April 1st ... *****/
 table.dp_calendar .dp_header {
-	padding:			8px 0;
+	padding:			.8em 0;
 	color: 				#53637d;
 	font-family: 	inherit;
-	font-size:			14px;
+	font-size:			1.1em;
 	font-weight: 	bold;
 	text-align: 		center;
-	letter-spacing: 2px;
+	letter-spacing: .2em;
 	background-color: #fff;
 }
 
@@ -65,7 +65,7 @@ table.dp_calendar .dp_cell {
 	padding:				.4em;
 	color: 					#000;
 	font-family:		inherit;
-	font-size: 			13px;
+	font-size: 			1em;
 	text-align:			center;
 	background-color: 	#eee;
 	cursor: 			pointer;
