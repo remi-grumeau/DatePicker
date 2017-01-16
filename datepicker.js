@@ -98,7 +98,7 @@
 			DP.outputClear();
 
 			// set short name variables
-			var d=DP._inputDate.day, m=DP._inputDate.month, y=DP._inputDate.year, dayLabel;
+			var d=DP._inputDate.day, m=DP._inputDate.month, y=DP._inputDate.year, dayLabel, days;
 			// set day label
 			switch(DP._inputDate.day) {
 				case 1 :
@@ -110,6 +110,18 @@
 				case 3 :
 					dayLabel = '3rd';
 					break;
+                                case 21:
+                                        dayLabel = '21st';
+                                        break;
+                               case 22:
+                                        dayLabel = '22nd';
+                                        break;
+                               case 23:
+                                        dayLabel = '23rd';
+                                        break;
+                                case 31:
+                                        dayLabel = '31st';
+                                        break;
 				default :
 					dayLabel = DP._inputDate.day+'th';
 			}
@@ -172,15 +184,16 @@
 
 			// Set element as active element
 			DP._element = (typeof t =='string')?DP.gbi(t):t;
+                        // Make a new date (for defaults)
+                        var d = new Date();
 
 			if(DP._element.value!='') {
 				// if the element has a value
-				DP._inputDate.day = parseInt(DP._element.value.substring(8,10));
-				DP._inputDate.month = parseInt(DP._element.value.substring(5,7));
-				DP._inputDate.year = parseInt(DP._element.value.substring(0,4));
+				DP._inputDate.day = parseInt(DP._element.value.substring(8,10)) || 1;
+				DP._inputDate.month = parseInt(DP._element.value.substring(5,7)) || 1;
+				DP._inputDate.year = parseInt(DP._element.value.substring(0,4)) || d.getFullYear();
 			} else {
-				// Make a new date, and set the current month and year.
-				var d = new Date();
+				// set the current day, month and year.
 				DP._inputDate.day = d.getDate();
 				DP._inputDate.month = d.getMonth() + 1;
 				DP._inputDate.year = d.getFullYear();
@@ -312,6 +325,14 @@
 				day = '2nd';
 			else if(dayNum==3)
 				day = '3rd';
+                        else if(dayNum==21)
+                                day = '21st';
+                        else if(dayNum==22)
+                                day = '22nd';
+                        else if(dayNum==23)
+                                day = '23rd';
+                        else if(dayNum==31)
+                                day = '31st';
 			else
 				day = dayNum+'th';
 			month = DP._locale.months[parseInt(d.substr(5,2))-1];
